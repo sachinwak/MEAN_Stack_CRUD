@@ -1,0 +1,17 @@
+<table class="table table-striped">  
+    <thead>  
+    <tr>  
+        <td  scope="col">User Name</td>  
+        <td  scope="col">Last Name</td>  
+        <td colspan="2"  scope="col">Actions</td>  
+    </tr>  
+    </thead>  
+    <tbody>  
+        <tr *ngFor="let User of users; index as i">  
+            <td>{{ User.UserName }}</td>  
+            <td>{{ User.UserLastName }}</td>  
+            <td><a [routerLink]="['/user/edit', User._id]" class="btn btn-primary">Edit</a></td>  
+            <td><a (click) = "deleteUser(User._id, i)" class="btn btn-danger">Delete</a>  
+        </tr>  
+    </tbody>  
+</table>  
